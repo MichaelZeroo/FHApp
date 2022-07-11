@@ -1,7 +1,7 @@
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Keyboard, TouchableWithoutFeedback, Image } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { authentication } from '../firebase/firebaseconfig'
-import { signInWithEmailAndPassword, onAuthStateChanged, applyActionCode } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import App from '../App' 
 import { LinearGradient } from 'expo-linear-gradient'
 
@@ -74,6 +74,7 @@ const Login = (App) => {
         <View>
             <Text style={styles.header3}>Password:</Text>
         </View>
+        
            <TextInput 
         placeholder='Password'
         value={password}
