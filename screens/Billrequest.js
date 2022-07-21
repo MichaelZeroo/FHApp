@@ -1,7 +1,27 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
+import * as Linking from 'expo-linking'
+
+
 
 const Billrequest = () => {
+
+  const sendMail = async () => {
+
+    try {
+
+       const recipient = "michaelsngh99@gmail.com"
+       const title = "Bill Request"
+       const body = "Please provide your Name and NHI Number"
+
+      const url = `mailto:${recipient}?cc=&subject=${title}&body=${body}`;
+      await Linking.openURL(url);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  
   return (
     <View style={styles.container}>
       <Text>Billrequest</Text>
@@ -9,21 +29,8 @@ const Billrequest = () => {
       <Text>Please enter these details to get your bill</Text>
 
       <View>
-      <TextInput 
-        placeholder='Name'
-        style={styles.input}
-        />
-
-        <TextInput 
-        placeholder='NHI Number'
-        style={styles.input}
-        />
-
-      </View>
-
-      <View>
       <TouchableOpacity
-        onPress={() => {}}
+        onPress={sendMail}
         style={[styles.button]}>
             <Text style={styles.buttonText}>Send Details</Text>
         </TouchableOpacity>
