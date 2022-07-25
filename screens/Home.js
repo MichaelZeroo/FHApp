@@ -16,7 +16,10 @@ const Home = (App) => {
 
     <ScrollView  style={styles.scroll}>
 
+      <View style={styles.head}>
       <Text style={[styles.header1]}>Franklin Hospital</Text>
+      </View>
+
       <Text style={[styles.header2]}>Welcome</Text>
 
     <View  style={styles.container}>
@@ -96,6 +99,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     padding: 10,
+    backgroundColor: 'white',
   },
 block:{
 backgroundColor: '#33838c',
@@ -106,8 +110,19 @@ borderRadius: 10,
 justifyContent: 'center',
     alignItems: 'center',
 },
+head:{
+  width: '100%',
+  backgroundColor: '#115367',
+  height: '20%',
+  borderBottomRightRadius: 10,
+  borderBottomLeftRadius: 10,
+  alignItems: 'center',
+  justifyContent: 'center',
+},
 header1:{
 fontSize: 30,
+fontWeight: '400',
+color: 'white',
 },
 header2:{
   fontSize: 25,
@@ -115,4 +130,8 @@ header2:{
   title1:{
     color: 'white',
   },
+  scroll:{
+    backgroundColor: 'white',
+    flex: 1,
+  }
 })

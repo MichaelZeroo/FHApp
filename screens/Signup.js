@@ -27,9 +27,16 @@ const Signup = () => {
 
     <KeyboardAvoidingView  style={styles.container} behavior="padding">
        
-      <View>
+      <View style={styles.container2}>
+
+      <Text style={styles.header2}>Franklin Hospital</Text>
+
             <Text style={styles.header2}>Register</Text>
       </View>
+
+      <View>
+            <Text style={styles.header3}>Email:</Text>
+        </View>
 
       <View styles={styles.inputContainer}>
         <TextInput 
@@ -38,6 +45,13 @@ const Signup = () => {
         onChangeText={text => setEmail(text)}
         style={styles.input}
         />
+        </View>
+
+        <View>
+            <Text style={styles.header3}>Password:</Text>
+        </View>
+
+<View styles={styles.inputContainer}>
            <TextInput 
         placeholder='Password'
         value={password}
@@ -51,8 +65,8 @@ const Signup = () => {
 
         <TouchableOpacity
         onPress={RegisterUser}
-        style={[styles.button, styles.buttonOutline]}>
-            <Text style={styles.buttonOutlineText}>Register</Text>
+        style={[styles.button]}>
+            <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
 
       </View>
@@ -69,16 +83,15 @@ export default Signup
 const styles = StyleSheet.create({
     container: {
         flex: 1, 
-        justifyContent: 'center',
-        alignItems: 'center',
+        padding: 10,
         backgroundColor: 'white',
     },
     inputContainer:{
-        width: '80%'
+        width: '100%'
     },
     input:{
         backgroundColor:'white',
-        width: 325,  
+        width: '100%',  
         height: 40,
         paddingLeft: 15,
         paddingRight: 15,
@@ -87,35 +100,41 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#bbbbbb',
     },
-    button:{
-        backgroundColor: 'white',
-    width: '100%',
-    padding: 15,
-    borderRadius: 10,
-    alignItems: 'center',
-    },
     buttonContainer:{
-        width: '80%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 40,
-    
-    },
-    buttonOutline:{
-        backgroundColor: '#54b3af',
-    marginTop: 5,
-    borderColor: 'transparent',
-    borderWidth: 2,
-    },
-    buttonOutlineText:{
-        color: 'white',
-    fontWeight: '700',
-    fontSize: 16,
-    },
+      width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginTop: 40,
+  
+  },
+  button:{
+      backgroundColor: '#33838c',
+  width: '70%',
+  padding: 15,
+  borderRadius: 10,
+  alignItems: 'center',
+  },
+  buttonText:{
+      color: 'white',
+  fontWeight: '700',
+  fontSize: 16,
+  },
     header2:{
       fontSize: 40,
       paddingBottom: 20, 
       color:'#115367',
       fontWeight: 'bold',
-    }
+    },
+    container2:{
+      width: '100%',
+    },
+    header3:{
+      color:'#115367',
+      fontSize:16,
+      paddingBottom:2,
+      paddingLeft: 10,
+      paddingRight: 10,
+      paddingTop: 10,
+      
+  },
 })

@@ -41,7 +41,7 @@ const Login = (App) => {
     <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
     <KeyboardAvoidingView  style={styles.container} behavior="padding">
 
-      <View  style={styles.container2} ></View>
+      <View  style={styles.container2} >
          
          <View>
             <Text style={styles.header1}>Franklin Hospital</Text>
@@ -59,22 +59,31 @@ const Login = (App) => {
             <Text style={styles.header3}>To use full functionality of this app, please login or register</Text>
         </View>
 
-        <View>
+        </View>
+
+        
+       
+      
+
+      <View>
             <Text style={styles.header3}>Email:</Text>
         </View>
-       
-      <View styles={styles.inputContainer}>
+
+        <View styles={styles.containerInput}>
+
         <TextInput 
         placeholder='Email'
         value={email}
         onChangeText={text => setEmail(text)}
         style={styles.input}
         />
+        </View>
 
         <View>
             <Text style={styles.header3}>Password:</Text>
         </View>
-        
+
+        <View styles={styles.containerInput}>
            <TextInput 
         placeholder='Password'
         value={password}
@@ -83,6 +92,7 @@ const Login = (App) => {
         secureTextEntry
         />       
       </View>
+
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -106,6 +116,7 @@ const Login = (App) => {
         </TouchableOpacity>
 
       </View>
+
     </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
      
@@ -120,13 +131,12 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         backgroundColor: 'white',
+    },
+    containerInput:{
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        
-    },
-    inputContainer:{
-        width: '100%',
-        
+       backgroundColor: 'black',
     },
     input:{
         backgroundColor:'white',
@@ -134,7 +144,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         borderWidth: 1,
         borderColor: '#bbbbbb', 
-        width: 325,  
+        width: '100%',  
         height: 40,
         paddingLeft: 15,
         paddingRight: 15,
@@ -142,7 +152,7 @@ const styles = StyleSheet.create({
     },
     
     buttonContainer:{
-        width: '80%',
+        width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 40,
@@ -150,7 +160,7 @@ const styles = StyleSheet.create({
     },
     button:{
         backgroundColor: '#33838c',
-    width: '100%',
+    width: '70%',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
@@ -172,16 +182,17 @@ const styles = StyleSheet.create({
     header2:{
         color:'#115367',
         fontSize:20,
-        paddingBottom:20,
+        padding:10,
         fontWeight: 'bold',
         
     },
     header3:{
         color:'#115367',
         fontSize:16,
-        paddingBottom:10,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingBottom:2,
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 10,
         
     },
     or:{
@@ -189,7 +200,6 @@ const styles = StyleSheet.create({
        padding: 5,
     },
     container2:{
-      height: 100,
       width: '100%'
     }
 

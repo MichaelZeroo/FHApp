@@ -3,7 +3,7 @@ import React from 'react'
 
 const Aboutus = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Aboutus</Text>
       <Text>Proudly transforming healthcare in Franklin</Text>
       <Text>Franklin Hospital is New Zealand’s newest private hospital. It has been purpose-built to give the Franklin 
@@ -39,4 +39,9 @@ Plastics
 
 export default Aboutus
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: 'white',
+  },
+})
