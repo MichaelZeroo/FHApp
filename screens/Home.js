@@ -1,5 +1,7 @@
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Keyboard, TouchableWithoutFeedback, ScrollView } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Keyboard, TouchableWithoutFeedback, ScrollView, Image } from 'react-native'
 import React from 'react'
+
+
 
 const Home = (App) => {
 
@@ -11,18 +13,43 @@ const Home = (App) => {
   const map = () => App.navigation.navigate("Map")
   const aboutUs = () => App.navigation.navigate("AboutUs")
   const billRequest = () => App.navigation.navigate("BillRequest")
+  const whatYouCanExpect = () => App.navigation.navigate("WhatYouCanExpect")
+  const WhatYouNeedToDo = () => App.navigation.navigate("WhatYouNeedToDo")
 
   return (
-
-    <ScrollView  style={styles.scroll}>
+    <View style={styles.screen}>
+    
+    <ScrollView  contentContainerStyle={styles.scroll}>
 
       <View style={styles.head}>
       <Text style={[styles.header1]}>Franklin Hospital</Text>
+      <Text style={[styles.header3]}>Te Haumanu Kohekohe</Text>
+
       </View>
 
       <Text style={[styles.header2]}>Welcome</Text>
 
     <View  style={styles.container}>
+
+    <TouchableOpacity
+     onPress={whatYouCanExpect}
+      style={[styles.button]}>
+      <View style={styles.block}>
+
+      <Text style={[styles.title1]}>What You Can Expect</Text>
+
+      </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+     onPress={WhatYouNeedToDo}
+      style={[styles.button]}>
+      <View style={styles.block}>
+
+      <Text style={[styles.title1]}>What You Need To Do</Text>
+
+      </View>
+      </TouchableOpacity>
 
       <TouchableOpacity
      onPress={foodOrdering}
@@ -48,7 +75,7 @@ const Home = (App) => {
       onPress={billRequest}
       style={[styles.button]}>
       <View style={styles.block}>
-        <Text style={[styles.title1]}>Bill Request</Text>
+        <Text style={[styles.title1]}>Request your bill</Text>
 
       </View>
       </TouchableOpacity>
@@ -58,7 +85,7 @@ const Home = (App) => {
       style={[styles.button]}>
       <View style={styles.block}>
 
-      <Text style={[styles.title1]}>Map</Text>
+      <Text style={[styles.title1]}>Location</Text>
 
       </View>
       </TouchableOpacity>
@@ -82,11 +109,15 @@ const Home = (App) => {
 
       </View>
       </TouchableOpacity>
+
+      
       
     </View>
 
 
     </ScrollView>
+
+    </View>
   )
 }
 
@@ -112,7 +143,7 @@ justifyContent: 'center',
 },
 head:{
   width: '100%',
-  backgroundColor: '#115367',
+  backgroundColor: '#33838c',
   height: '20%',
   borderBottomRightRadius: 10,
   borderBottomLeftRadius: 10,
@@ -121,17 +152,28 @@ head:{
 },
 header1:{
 fontSize: 30,
-fontWeight: '400',
+fontWeight: '600',
 color: 'white',
 },
 header2:{
   fontSize: 25,
+  padding: 10,
+  fontWeight: '500',
   },
   title1:{
     color: 'white',
+    fontSize: 20,
   },
   scroll:{
     backgroundColor: 'white',
+    paddingBottom: 150,
+  },
+  header3:{
+    fontSize: 16,
+fontWeight: '600',
+color: 'white',
+  },
+  screen:{
     flex: 1,
-  }
+  },
 })

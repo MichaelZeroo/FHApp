@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import * as Linking from 'expo-linking'
 import MapView, { Marker } from 'react-native-maps'
+import { ScrollView } from 'react-native-gesture-handler'
 
 
 const Map = () => {
@@ -17,10 +18,17 @@ const Map = () => {
 
 
   return (
+
+    <ScrollView contentContainerStyle={styles.scroll}>
+
     <View style={styles.container}>
 
-      <Text style={styles.header2}>Need Directions to Franklin Hospital?</Text>
-      <Text style={styles.header1}>Map</Text>
+<Text style={styles.header1}>Location</Text>
+
+<Text style={styles.header2}>12 Glasgow Road Pukekohe 2120</Text>
+
+
+      <Text style={styles.header2}>Map</Text>
       
 
       <View  style={styles.mapContainer}>
@@ -42,6 +50,8 @@ const Map = () => {
 
   </View>
 
+  <Text style={styles.header2}>Need Directions to Franklin Hospital?</Text>
+
   <View style={styles.buttonContainer}>
       <TouchableOpacity
         onPress={openMap}
@@ -52,12 +62,18 @@ const Map = () => {
 
 
     </View>
+    </ScrollView>
   )
 }
 
 export default Map
 
 const styles = StyleSheet.create({
+  scroll:{
+    flex: 1,
+    backgroundColor: 'white',
+    height:'100%',
+  },
   container:{
     flex: 1,
     backgroundColor: 'white',
@@ -78,6 +94,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
+    
   },
   buttonText:{
     fontWeight: 'bold',
@@ -85,9 +102,22 @@ const styles = StyleSheet.create({
   },  
   buttonContainer:{
     width: '100%',
-    height: '15%',
     alignItems: 'center',
     padding: 10,
+    height: '30%',
   },
+  header2:{
+    fontSize: 20,
+  padding: 15,
+  fontWeight: '500',
+  color: '#115367',
+
+  },
+  header1:{
+    fontSize: 24,
+  padding: 10,
+  fontWeight: '600',
+  color: '#115367',
+  }
 
 })
