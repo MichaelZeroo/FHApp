@@ -12,6 +12,8 @@ import Foodordering from './screens/Foodordering';
 import Survey from './screens/Survey';
 import Preadmission from './screens/Preadmission';
 import Billrequest from './screens/Billrequest';
+import WhatYouNeedToDo from './screens/WhatYouNeedToDo';
+import WhatYouCanExpect from './screens/WhatYouCanExpect';
 
 
 
@@ -31,7 +33,8 @@ export default function App() {
       <Stack.Screen name="Survey" component={Survey} />
       <Stack.Screen name="PreAdmission" component={Preadmission} />
       <Stack.Screen name="BillRequest" component={Billrequest} />
-
+      <Stack.Screen name="WhatYouCanExpect" component={WhatYouCanExpect} />
+      <Stack.Screen name="WhatYouNeedToDo" component={WhatYouNeedToDo} />
     </Stack.Navigator>
   </NavigationContainer>
   );
