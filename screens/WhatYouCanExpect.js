@@ -62,7 +62,7 @@ scroll:{
   banner:{
     width: '100%',
     backgroundColor: '#33838c',
-    height: '20%',
+    height: 125,
     justifyContent: 'center',
     borderBottomRightRadius: 10,
   borderBottomLeftRadius: 10,
@@ -72,5 +72,5 @@ scroll:{
     fontSize: 30,
     fontWeight: '500',
     padding: 20,
-  }
+  },
 })

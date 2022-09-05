@@ -85,7 +85,7 @@ const Home = (App) => {
       style={[styles.button]}>
       <View style={styles.block}>
 
-      <Text style={[styles.title1]}>Location</Text>
+      <Text style={[styles.title1]}>Our Location</Text>
 
       </View>
       </TouchableOpacity>

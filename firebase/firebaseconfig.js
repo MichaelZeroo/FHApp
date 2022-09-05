@@ -7,13 +7,13 @@ import { getAuth} from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBCV2axNKDNlGHjnYg-ZyMn-hsqKToDghI",
-  authDomain: "franklinhospitalapp.firebaseapp.com",
-  projectId: "franklinhospitalapp",
-  storageBucket: "franklinhospitalapp.appspot.com",
-  messagingSenderId: "736901386042",
-  appId: "1:736901386042:web:bd92aa5f6405e2a24a0a03",
-  measurementId: "G-G4K0FQFE3C"
+  apiKey: "AIzaSyAQtmc-jklH9CIOakRD9anvh1qrY0BTQZY",
+  authDomain: "franklin-hospital.firebaseapp.com",
+  projectId: "franklin-hospital",
+  storageBucket: "franklin-hospital.appspot.com",
+  messagingSenderId: "303845554210",
+  appId: "1:303845554210:web:1a3dc989ac6937f158727b",
+  measurementId: "G-9C7MZRDT9L"
 };
 
 // Initialize Firebase
