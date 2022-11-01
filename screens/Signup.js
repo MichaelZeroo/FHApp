@@ -1,8 +1,9 @@
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Keyboard, TouchableWithoutFeedback, Image } from 'react-native'
 import React, { useState} from 'react'
-import { LinearGradient } from 'expo-linear-gradient'
 import { authentication } from '../firebase/firebaseconfig'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
+import logo from '../assets/logo_FHNobg-preview.png'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 const Signup = () => {
@@ -23,16 +24,27 @@ const Signup = () => {
 
   return (
 
+    <KeyboardAwareScrollView contentContainerStyle={styles.scroll}>
+
     <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
 
     <KeyboardAvoidingView  style={styles.container} behavior="padding">
+
+
        
       <View style={styles.container2}>
 
-      <Text style={styles.header2}>Franklin Hospital</Text>
+      <Image source={logo} style={styles.logo} />
 
-            <Text style={styles.header2}>Register</Text>
+      <Text style={styles.header1}>Franklin Hospital</Text>
+
+            <Text style={styles.header1}>Welcome</Text>
+
+            <Text style={styles.header2}>Signup</Text>
       </View>
+
+      <Text style={styles.header3}>If you do not have an account, please signup here</Text>
+
 
       <View>
             <Text style={styles.header3}>Email:</Text>
@@ -66,13 +78,14 @@ const Signup = () => {
         <TouchableOpacity
         onPress={RegisterUser}
         style={[styles.button]}>
-            <Text style={styles.buttonText}>Register</Text>
+            <Text style={styles.buttonText}>Signup</Text>
         </TouchableOpacity>
 
       </View>
       
     </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
+    </KeyboardAwareScrollView>
 
     
   )
@@ -85,6 +98,11 @@ const styles = StyleSheet.create({
         flex: 1, 
         padding: 10,
         backgroundColor: 'white',
+    },
+    scroll:{
+      backgroundColor: 'white',
+      paddingBottom: 150,
+      flex: 1,
     },
     inputContainer:{
         width: '100%'
@@ -119,22 +137,36 @@ const styles = StyleSheet.create({
   fontWeight: '700',
   fontSize: 16,
   },
+  header1:{
+    color:'#115367',
+    fontSize:40,
+    paddingBottom:20,
+    paddingLeft: 20,
+    paddingRight: 20,
+    fontWeight: 'bold',
+    justifyContent: 'center',
+},
     header2:{
-      fontSize: 40,
-      paddingBottom: 20, 
       color:'#115367',
-      fontWeight: 'bold',
+        fontSize:24,
+        padding:10,
+        fontWeight: 'bold',
     },
     container2:{
       width: '100%',
+      justifyContent: 'center',
+  alignItems: 'center',
     },
     header3:{
       color:'#115367',
-      fontSize:16,
+      fontSize:18,
       paddingBottom:2,
-      paddingLeft: 10,
-      paddingRight: 10,
+      paddingLeft: 5,
+      paddingRight: 5,
       paddingTop: 10,
-      
   },
+  logo:{
+    height: 100,
+    width: 100,
+  }
 })

@@ -3,7 +3,7 @@ import React from 'react'
 
 const WhatYouCanExpect = () => {
   return (
-    <View style={styles.screen}>
+    
     
     <ScrollView  contentContainerStyle={styles.scroll}>
 
@@ -31,7 +31,7 @@ const WhatYouCanExpect = () => {
 
     </ScrollView>
 
-    </View>
+   
   )
 }
 
@@ -42,10 +42,6 @@ scroll:{
     backgroundColor: 'white',
     paddingBottom: 150,
   },
-  screen:{
-    flex: 1,
-    backgroundColor: 'white',
-  },
   header1:{
     fontSize: 24,
   padding: 10,
@@ -53,11 +49,12 @@ scroll:{
   color: '#115367',
   },
   text1:{
-    fontSize: 18,
-  padding: 5,
+    padding: 5,
   paddingLeft: 10,
+  fontSize: 18,
+  padding: 10,
   fontWeight: '400',
-  color: '#115367',
+  color: 'black',
   },
   banner:{
     width: '100%',

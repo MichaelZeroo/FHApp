@@ -19,7 +19,7 @@ const WhatYouNeedToDo = () => {
           preparing to go home and following your discharge.</Text>
 
           <Text style={styles.text1}>On this information page we will refer to your
-          surgery as a procedure'</Text>
+          surgery as a 'procedure'</Text>
 
           <View style={styles.header}>
         <Text style={styles.headerText}> 1 | Before you come to Franklin Hospital</Text>

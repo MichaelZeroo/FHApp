@@ -1,14 +1,22 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 
 const Aboutus = () => {
   return (
 
-    <ScrollView contentContainerStyle={styles.scroll}>
+   
+   <KeyboardAwareScrollView contentContainerStyle={styles.scroll}>
+
+
+<View style={styles.banner}>
+            <Text style={styles.bannerText}>About Us</Text>
+        </View>
 
 
     <View style={styles.container}>
-      <Text style={styles.header1}>Aboutus</Text>
+      
       <Text style={styles.header2}>Proudly transforming healthcare in Franklin</Text>
       <Text style={styles.text1}>Franklin Hospital is New Zealand’s newest private hospital. It has been purpose-built to give the Franklin 
         community and surrounding areas greater access to some of New Zealand’s top specialists, and the ability to receive treatment closer to home. 
@@ -36,7 +44,7 @@ const Aboutus = () => {
 <Text style={styles.header2}>Additional services</Text>
 
     </View>
-    </ScrollView>
+   </KeyboardAwareScrollView> 
   )
 }
 
@@ -44,8 +52,8 @@ export default Aboutus
 
 const styles = StyleSheet.create({
   scroll:{
-    flex: 1,
     backgroundColor: 'white',
+    paddingBottom: 150,
     },
   container:{
     flex: 1,
@@ -58,22 +66,37 @@ const styles = StyleSheet.create({
   color: '#115367',
   },
   header2:{
-    fontSize: 18,
+    fontSize: 20,
   padding: 10,
   fontWeight: '500',
   color: '#115367',
   },
   header3:{
-    fontSize: 16,
+    fontSize: 20,
   padding: 10,
   fontWeight: '500',
   color: '#115367',
   },
   text1:{
-    fontSize: 14,
   padding: 5,
   paddingLeft: 10,
+  fontSize: 18,
+  padding: 10,
   fontWeight: '400',
-  color: '#115367',
-  }
+  color: 'black',
+  },
+   banner:{
+    width: '100%',
+    backgroundColor: '#33838c',
+    height: 125,
+    justifyContent: 'center',
+    borderBottomRightRadius: 10,
+  borderBottomLeftRadius: 10,
+  },
+  bannerText:{
+    color: 'white',
+    fontSize: 30,
+    fontWeight: '500',
+    padding: 20,
+  },
 })

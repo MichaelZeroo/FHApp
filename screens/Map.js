@@ -3,6 +3,8 @@ import React from 'react'
 import * as Linking from 'expo-linking'
 import MapView, { Marker } from 'react-native-maps'
 import { ScrollView } from 'react-native-gesture-handler'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 
 
 const Map = () => {
@@ -19,11 +21,21 @@ const Map = () => {
 
   return (
 
-    <ScrollView contentContainerStyle={styles.scroll}>
+    
+
+
+ <KeyboardAwareScrollView contentContainerStyle={styles.scroll}>
+
+
+      
+<View style={styles.banner}>
+            <Text style={styles.bannerText}>Our Location</Text>
+        </View>
 
     <View style={styles.container}>
 
-<Text style={styles.header1}>Location</Text>
+
+    <Text style={styles.header2}>You can find us at:</Text>
 
 <Text style={styles.header2}>12 Glasgow Road Pukekohe 2120</Text>
 
@@ -62,7 +74,9 @@ const Map = () => {
 
 
     </View>
-    </ScrollView>
+   </KeyboardAwareScrollView> 
+
+    
   )
 }
 
@@ -70,14 +84,14 @@ export default Map
 
 const styles = StyleSheet.create({
   scroll:{
-    flex: 1,
     backgroundColor: 'white',
-    height:'100%',
+    paddingBottom: 150,
   },
+  
   container:{
-    flex: 1,
     backgroundColor: 'white',
-    
+    flex: 1,
+    height: 600,
   },
   map:{
     width: '80%',
@@ -118,6 +132,20 @@ const styles = StyleSheet.create({
   padding: 10,
   fontWeight: '600',
   color: '#115367',
-  }
+  }, 
+  banner:{
+    width: '100%',
+    backgroundColor: '#33838c',
+    height: 125,
+    justifyContent: 'center',
+    borderBottomRightRadius: 10,
+  borderBottomLeftRadius: 10,
+  },
+  bannerText:{
+    color: 'white',
+    fontSize: 30,
+    fontWeight: '500',
+    padding: 20,
+  },
 
 })

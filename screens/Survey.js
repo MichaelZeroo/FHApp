@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableWithoutFeedback, KeyboardAvoidingView, TouchableOpacity, Keyboard } from 'react-native'
 import React, { useState } from 'react'
 import { Picker } from "@react-native-picker/picker"
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 
 
 
@@ -27,14 +29,19 @@ const Survey = () => {
 
 
   return (
-    <ScrollView  contentContainerStyle={styles.scroll}>
+   
 
-<TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
-    <KeyboardAvoidingView  style={styles.container} >
+   <KeyboardAwareScrollView contentContainerStyle={styles.scroll}>
+
 
 <View style={styles.banner}>
             <Text style={styles.bannerText}>Patient Satisfaction Survey</Text>
         </View>
+
+<TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
+    <KeyboardAvoidingView  style={styles.container} >
+
+
 
         <Text style={styles.header1}>Thank you for choosing to have your procedure at Franklin Hospital. 
         For onging quality improvement and to improve on our services, we would appreciate your feedback:</Text>
@@ -341,8 +348,8 @@ const Survey = () => {
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
 
-
-    </ScrollView>
+</KeyboardAwareScrollView>
+  
 
   )
 }
@@ -357,9 +364,14 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     backgroundColor: 'white',
+    padding: 5,
   },
   picker: {
-    width: '80%',
+    width: '90%',
+    borderWidth: 1,
+    borderColor: '#bbbbbb',
+    borderRadius: 15,
+    
   },
   banner:{
     width: '100%',
@@ -384,7 +396,7 @@ const styles = StyleSheet.create({
   header2:{
     color:'#115367',
     fontSize:20,
-    paddingTop: 10, 
+    paddingTop: 20, 
     padding: 10,
   },
   containerInput:{

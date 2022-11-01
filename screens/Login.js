@@ -2,8 +2,10 @@ import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, Vi
 import React, { useState, useEffect } from 'react'
 import { authentication } from '../firebase/firebaseconfig'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import App from '../App' 
-import { LinearGradient } from 'expo-linear-gradient'
+import Asset from 'expo-asset'
+import logo from '../assets/logo_FHNobg-preview.png'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 
 
 
@@ -18,6 +20,7 @@ const Login = (App) => {
 
   const register = () => App.navigation.navigate("SignUp")
   const home = () => App.navigation.navigate("Home")
+  const testy = () => App.navigation.navigate("Testy")
 
   const handleLogin = () => {
     signInWithEmailAndPassword(authentication, email, password)
@@ -32,16 +35,22 @@ const Login = (App) => {
       })
   }
 
+ 
 
  
 
   return (
 
+    <KeyboardAwareScrollView contentContainerStyle={styles.scroll}>
+
+<TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
+    <KeyboardAvoidingView  style={styles.container} >
     
-    <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
-    <KeyboardAvoidingView  style={styles.container} behavior="padding">
 
       <View  style={styles.container2} >
+
+      <Image source={logo} style={styles.logo} />
+
          
          <View>
             <Text style={styles.header1}>Franklin Hospital</Text>
@@ -56,7 +65,7 @@ const Login = (App) => {
         </View>
 
         <View>
-            <Text style={styles.header3}>To use full functionality of this app, please login or register</Text>
+            <Text style={styles.header3}>To use full functionality of this app, please login or signup</Text>
         </View>
 
         </View>
@@ -106,7 +115,7 @@ const Login = (App) => {
         <TouchableOpacity
         onPress={register}
         style={[styles.button]}>
-            <Text style={styles.buttonText}>Register</Text>
+            <Text style={styles.buttonText}>Signup</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -115,10 +124,16 @@ const Login = (App) => {
             <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity
+        onPress={testy}
+        style={[styles.button]}>
+            <Text style={styles.buttonText}>Home</Text>
+        </TouchableOpacity>
       </View>
 
     </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
+    </KeyboardAwareScrollView>
      
 
   )
@@ -137,6 +152,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
        backgroundColor: 'black',
+    },
+    scroll:{
+      backgroundColor: 'white',
+      paddingBottom: 150,
     },
     input:{
         backgroundColor:'white',
@@ -181,26 +200,31 @@ const styles = StyleSheet.create({
     },
     header2:{
         color:'#115367',
-        fontSize:20,
+        fontSize:24,
         padding:10,
         fontWeight: 'bold',
         
     },
     header3:{
         color:'#115367',
-        fontSize:16,
+        fontSize:18,
         paddingBottom:2,
-        paddingLeft: 10,
-        paddingRight: 10,
+        paddingLeft: 5,
+        paddingRight: 5,
         paddingTop: 10,
-        
     },
     or:{
        color: '#bbbbbb',
        padding: 5,
     },
+    logo:{
+      height: 100,
+      width: 100,
+    },
     container2:{
-      width: '100%'
-    }
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
 
 })

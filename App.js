@@ -14,6 +14,7 @@ import Preadmission from './screens/Preadmission';
 import Billrequest from './screens/Billrequest';
 import WhatYouNeedToDo from './screens/WhatYouNeedToDo';
 import WhatYouCanExpect from './screens/WhatYouCanExpect';
+import Testy from './screens/test';
 
 
 
@@ -27,14 +28,15 @@ export default function App() {
     <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="SignUp" component={Signup} />
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Map" component={Map} />
-      <Stack.Screen name="AboutUs" component={Aboutus} />
-      <Stack.Screen name="FoodOrdering" component={Foodordering} />
+      <Stack.Screen name="Location" component={Map} />
+      <Stack.Screen name="About Us" component={Aboutus} />
+      <Stack.Screen name="Order Food" component={Foodordering} />
       <Stack.Screen name="Survey" component={Survey} />
       <Stack.Screen name="PreAdmission" component={Preadmission} />
       <Stack.Screen name="BillRequest" component={Billrequest} />
       <Stack.Screen name="WhatYouCanExpect" component={WhatYouCanExpect} />
       <Stack.Screen name="WhatYouNeedToDo" component={WhatYouNeedToDo} />
+      <Stack.Screen name="Testy" component={Testy} />
     </Stack.Navigator>
   </NavigationContainer>
   );

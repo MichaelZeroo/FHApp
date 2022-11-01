@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView } from 'react-native'
 import React, { useState } from 'react'
 import * as Linking from 'expo-linking'
 import Checkbox from 'expo-checkbox'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 
 
 
@@ -38,20 +40,23 @@ const Billrequest = () => {
   
   return (
 
-    <ScrollView  contentContainerStyle={styles.scroll}>
-
-
-    <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
-    <KeyboardAvoidingView  style={styles.container} behavior="padding">
-
     
+<KeyboardAwareScrollView contentContainerStyle={styles.scroll}>
 
 
-    
-
-    <View style={styles.banner}>
+<View style={styles.banner}>
             <Text style={styles.bannerText}>Request Bill</Text>
         </View>
+
+    <TouchableWithoutFeedback onPress={() => {Keyboard.dismiss()}}>
+    <KeyboardAvoidingView  style={styles.container}>
+
+    
+
+
+    
+
+    
 
         <View style={styles.container1}>
     
@@ -138,7 +143,7 @@ const Billrequest = () => {
     </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
 
-    </ScrollView>
+   </KeyboardAwareScrollView> 
   )
 }
 
@@ -149,6 +154,10 @@ container:{
   flex: 1,
   backgroundColor: 'white',
   
+},
+scroll:{
+  backgroundColor: 'white',
+  paddingBottom: 150,
 },
 header:{
   color:'#115367',
