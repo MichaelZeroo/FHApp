@@ -20,7 +20,6 @@ const Login = (App) => {
 
   const register = () => App.navigation.navigate("SignUp")
   const home = () => App.navigation.navigate("Home")
-  const testy = () => App.navigation.navigate("Testy")
 
   const handleLogin = () => {
     signInWithEmailAndPassword(authentication, email, password)
@@ -124,11 +123,7 @@ const Login = (App) => {
             <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-        onPress={testy}
-        style={[styles.button]}>
-            <Text style={styles.buttonText}>Home</Text>
-        </TouchableOpacity>
+    
       </View>
 
     </KeyboardAvoidingView>
