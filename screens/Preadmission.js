@@ -4,7 +4,6 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import * as MediaLibrary from 'expo-media-library';
 import * as FileSystem from 'expo-file-system';
 import * as Permissions from 'expo-permissions';
-import pdf from '../assets/3_Patient Health Questionnaire.pdf'
 import { StorageAccessFramework } from 'expo-file-system';
 import PDFReader from 'rn-pdf-reader-js-no-loading'
 import Constants from 'expo-constants'
@@ -14,11 +13,16 @@ import { render } from 'react-dom';
 
 
 
-const Preadmission = () => {
+const Preadmission = (App) => {
 
  
+  const PatientAdmissionForm = () => App.navigation.navigate("PatientAdmissionForm")
 
-  
+  const PatientHealthQuestionnaireP1 = () => App.navigation.navigate("PatientHealthQuestionnaireP1")
+  const PatientHealthQuestionnaireP2 = () => App.navigation.navigate("PatientHealthQuestionnaireP2")
+  const PatientHealthQuestionnaireP3 = () => App.navigation.navigate("PatientHealthQuestionnaireP3")
+  const PatientHealthQuestionnaireP4 = () => App.navigation.navigate("PatientHealthQuestionnaireP4")
+
 
 
  
@@ -63,17 +67,42 @@ const Preadmission = () => {
         <Text  style={styles.text2}>If you post the forms allow 1-2 weeks extra for delivery</Text>
       </View>
 
-    
-
-<TouchableOpacity
-       
+      <View style={styles.buttonContainer}>
+      <TouchableOpacity
+        onPress={PatientAdmissionForm}
         style={[styles.button]}>
-            <Text style={styles.buttonText}>preview</Text>
+            <Text style={styles.buttonText}>Patient Admission Form</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity
+        onPress={PatientHealthQuestionnaireP1}
+        style={[styles.button]}>
+            <Text style={styles.buttonText}>Patient Health Questionnaire Section A</Text>
+        </TouchableOpacity>
+     
+
+      <TouchableOpacity
+        onPress={PatientHealthQuestionnaireP2}
+        style={[styles.button]}>
+            <Text style={styles.buttonText}>Patient Health Questionnaire Section B</Text>
+        </TouchableOpacity>
        
 
+        <TouchableOpacity
+        onPress={PatientHealthQuestionnaireP3}
+        style={[styles.button]}>
+            <Text style={styles.buttonText}>Patient Health Questionnaire Section C</Text>
+        </TouchableOpacity>
+        
 
+        <TouchableOpacity
+        onPress={PatientHealthQuestionnaireP4}
+        style={[styles.button]}>
+            <Text style={styles.buttonText}>Patient Health Questionnaire Section D</Text>
+        </TouchableOpacity>
+        
+        </View>
+      
 
 
     </KeyboardAvoidingView>
@@ -141,4 +170,24 @@ const styles = StyleSheet.create({
   fontWeight: '600',
   color: 'black',
   },
+  button:{
+    backgroundColor: '#33838c',
+width: '70%',
+padding: 15,
+borderRadius: 10,
+alignItems: 'center',
+marginBottom: 10,
+},
+buttonText:{
+    color: 'white',
+fontWeight: '700',
+fontSize: 16,
+},
+buttonContainer:{
+  width: '100%',
+justifyContent: 'center',
+alignItems: 'center',
+marginTop: 40,
+
+},
 })

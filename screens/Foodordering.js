@@ -66,10 +66,29 @@ const Foodordering = () => {
     </View>
     </View>
 
+    
+
     <View style={styles.subHeader}>
       <Text style={styles.subHeaderText}>Cereal</Text>
       <Text style={styles.text1}>Select from-</Text>
     </View>
+
+    <View style={styles.menuViews}>
+    {menu.map((item, index) => (
+  <TouchableOpacity onPress={alert} style={styles.menuView} key={index.toString()}>
+    <Text style={styles.textDescription}>
+      {Object.keys(item)[0]}:{' '}
+      {item[Object.keys(item)[0]].map((time, timeIndex) => (
+        <Text key={timeIndex}>
+          {time[0]}
+          {'  '}
+          {time[1]}{' '}
+        </Text>
+      ))}
+    </Text>
+  </TouchableOpacity>
+))}
+</View>
 
     <View style={styles.subHeader}>
       <Text style={styles.subHeaderText}>Dairy</Text>
@@ -177,20 +196,7 @@ const Foodordering = () => {
     </View>
     
     
-    {menu.map((item, index) => (
-  <TouchableOpacity onPress={alert} style={styles.menuView} key={index.toString()}>
-    <Text style={styles.textDescription}>
-      {Object.keys(item)[0]}:{' '}
-      {item[Object.keys(item)[0]].map((time, timeIndex) => (
-        <Text key={timeIndex}>
-          {time[0]}
-          {'  '}
-          {time[1]}{' '}
-        </Text>
-      ))}
-    </Text>
-  </TouchableOpacity>
-))}
+    
     
     
     
@@ -231,19 +237,17 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   menuView:{
-    width: '100%',
+    width: '80%',
     height: 75,
-    backgroundColor: '#e8f7f4',
     borderColor: '#33838c',
-    borderTopWidth: 1,
     borderBottomWidth: 1,
     borderRadius: 5,
     marginBottom: 10,
     padding: 5,
-    
+    marginTop: 5,
   },
   textDescription:{
-    fontSize: 18,
+    fontSize: 20,
   },
   header1:{
     fontSize: 20,
@@ -276,5 +280,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  menuViews:{
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 
 })

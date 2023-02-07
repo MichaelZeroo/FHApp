@@ -14,7 +14,12 @@ import Preadmission from './screens/Preadmission';
 import Billrequest from './screens/Billrequest';
 import WhatYouNeedToDo from './screens/WhatYouNeedToDo';
 import WhatYouCanExpect from './screens/WhatYouCanExpect';
-import Testy from './screens/test';
+import PatientAdmissionForm from './screens/PatientAdmissionForm';
+import PatientHealthQuestionnaireP1 from './screens/PatientHealthQuestionnaireP1';
+import PatientHealthQuestionnaireP2 from './screens/PatientHealthQuestionnaireP2';
+import PatientHealthQuestionnaireP3 from './screens/PatientHealthQuestionnaireP3';
+import PatientHealthQuestionnaireP4 from './screens/PatientHealthQuestionnaireP4';
+
 
 
 
@@ -36,7 +41,15 @@ export default function App() {
       <Stack.Screen name="BillRequest" component={Billrequest} />
       <Stack.Screen name="WhatYouCanExpect" component={WhatYouCanExpect} />
       <Stack.Screen name="WhatYouNeedToDo" component={WhatYouNeedToDo} />
-      <Stack.Screen name="Testy" component={Testy} />
+      <Stack.Screen name="PatientAdmissionForm" component={PatientAdmissionForm} />
+      <Stack.Screen name="PatientHealthQuestionnaireP1" component={PatientHealthQuestionnaireP1} />
+      <Stack.Screen name="PatientHealthQuestionnaireP2" component={PatientHealthQuestionnaireP2} />
+      <Stack.Screen name="PatientHealthQuestionnaireP3" component={PatientHealthQuestionnaireP3} />
+      <Stack.Screen name="PatientHealthQuestionnaireP4" component={PatientHealthQuestionnaireP4} />
+
+
+
+  
     </Stack.Navigator>
   </NavigationContainer>
   );

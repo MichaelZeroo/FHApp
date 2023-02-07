@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Linking } from 'react-native'
 import React from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
@@ -16,32 +16,18 @@ const Aboutus = () => {
 
 
     <View style={styles.container}>
+
+    <Text style={styles.header1}>Proudly transforming healthcare in Franklin</Text>
+<Text style={styles.header3}>Franklin Hospital is New Zealand’s newest private hospital. 
+It has been purpose-built to give the Franklin community and surrounding areas greater 
+access to some of New Zealand’s top specialists, and the ability to receive treatment closer to home. </Text>
+
+<Text style={styles.header3}>The new facility offers surgical and endoscopy services, a new urgent care, family doctors, radiology, pharmacy and a café all under the same roof</Text>
       
-      <Text style={styles.header2}>Proudly transforming healthcare in Franklin</Text>
-      <Text style={styles.text1}>Franklin Hospital is New Zealand’s newest private hospital. It has been purpose-built to give the Franklin 
-        community and surrounding areas greater access to some of New Zealand’s top specialists, and the ability to receive treatment closer to home. 
-         The new facility offers surgical and endoscopy services, a new urgent care, family doctors, radiology, pharmacy and a café all under the same roof
-      </Text>
-
-      <Text style={styles.header2}>Hospital service</Text>
-
-      <Text  style={styles.header3}>Franklin Hospital provides a range of services including:</Text>
-
-    <Text style={styles.text1}>Gastroenterology</Text>
-    <Text style={styles.text1}>Dr. Ravinder Ogra: Interventional and diagnostic endoscopy, bariatric balloon</Text>
-    <Text style={styles.text1}> Orthopaedics</Text>
-    <Text style={styles.text1}> Kevin Karpik: Hip, knee and general orthopaedics</Text>
-    <Text style={styles.text1}>Cardiology</Text>
-    <Text style={styles.text1}>Patrick Kay: Interventional and diagnostic cardiologist</Text>
-    <Text style={styles.text1}>General surgery</Text>
-    <Text style={styles.text1}>Gynaecology</Text>
-    <Text style={styles.text1}>Dental</Text>
-    <Text style={styles.text1}>Maxillofacial</Text>
-    <Text style={styles.text1}>Plastics</Text>
+    <Text style={styles.header3}>If you would like to find out more about us, Please refer to our website at:</Text>
+    <Text style={styles.header2} onPress={() => Linking.openURL('https://www.franklinhospital.co.nz/about/')}>www.franklinhospital.co.nz</Text>
 
 
-
-<Text style={styles.header2}>Additional services</Text>
 
     </View>
    </KeyboardAwareScrollView> 
@@ -52,6 +38,7 @@ export default Aboutus
 
 const styles = StyleSheet.create({
   scroll:{
+    flex: 1,
     backgroundColor: 'white',
     paddingBottom: 150,
     },
@@ -69,13 +56,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
   padding: 10,
   fontWeight: '500',
-  color: '#115367',
+  color: 'blue',
   },
   header3:{
     fontSize: 20,
   padding: 10,
   fontWeight: '500',
-  color: '#115367',
+  color: 'black',
   },
   text1:{
   padding: 5,
